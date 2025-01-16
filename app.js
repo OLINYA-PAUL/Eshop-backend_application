@@ -5,10 +5,16 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 // 'https://eshop-tutorial-pyri.vercel.app',
-app.use(cors({
-  origin: ["http://localhost:8000", "http://localhost:3000"],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: [
+      "https://eshop-frontend-app.vercel.app",
+      "http://localhost:8000",
+      "http://localhost:3000",
+    ],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
@@ -24,7 +30,6 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
     path: "config/.env",
   });
 }
-
 
 // app.get("/api/v2/user", (req, res) => {
 //   console.log(res.status(200).json({msg:"Hello world"}))
