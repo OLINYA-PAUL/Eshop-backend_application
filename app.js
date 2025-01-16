@@ -5,12 +5,13 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 // 'https://eshop-tutorial-pyri.vercel.app',
+// "http://localhost:8000",
+//   "http://localhost:3000",
 app.use(
   cors({
     origin: [
+      "https://eshop-backend-application.onrender.com/api/v2",
       "https://eshop-frontend-app.vercel.app",
-      "http://localhost:8000",
-      "http://localhost:3000",
     ],
     credentials: true,
   })
