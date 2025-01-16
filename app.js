@@ -4,14 +4,11 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-// 'https://eshop-tutorial-pyri.vercel.app',
-// "http://localhost:8000",
-//   "http://localhost:3000",
+
 app.use(
   cors({
     origin: [
-      "https://eshop-backend-application.onrender.com/api/v2",
-      "https://eshop-frontend-app.vercel.app",
+      "https://eshop-frontend-app.vercel.app/",
     ],
     credentials: true,
   })
@@ -32,9 +29,11 @@ if (process.env.NODE_ENV !== "PRODUCTION") {
   });
 }
 
-// app.get("/api/v2/user", (req, res) => {
-//   console.log(res.status(200).json({msg:"Hello world"}))
-// })
+app.get("/", (req, res) => {
+  console.log(res.status(200).json({msg:"Hello world E-shop"}))
+})
+
+
 // import routes
 const user = require("./controller/user");
 const shop = require("./controller/shop");
